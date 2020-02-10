@@ -1,17 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1 class="header">ChewBoard</h1>
+        <Comments v-bind:comments="comments"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Comments from './components/Comments'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+      Comments
+  },
+  data() {
+    return {
+      comments: [
+        {
+        id: 1,
+        title: 'Erster Kommentar',
+        owner: 'Enno'
+      },
+      {
+        id: 2,
+        title: 'zweiter Kommentar',
+        owner: 'Bumi'
+      },
+      ]
+    }
   }
 }
 </script>
@@ -21,8 +37,15 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+.header {
+  padding: 10px;
+  background-color: #798c9e;
+  margin: 0px;
+}
+body {
+  margin: 0px;
 }
 </style>
